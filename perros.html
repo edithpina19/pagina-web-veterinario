@@ -1,0 +1,21 @@
+{% extends "proyectocap/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    {% for perro in perros %}
+<div><p>
+    <h2 style="color: black;">{{perro.nombre}}</h2>
+        <h4 style="color: black;">{{perro.raza}}</h4>
+    <p><img class="intro-img img-fluid mb-3 mb- lg-0 rounded"  src="{{perro.imagen.url}}" alt="" style="width:25%;"></p>
+</p></div>
+
+<a href="{% url 'adoptar' %}" class="floating-btn">
+        <span class="btn btn-success">¡Adopta Ahora!</span>
+        <span class="btn-icon">→</span>
+    </a>
+
+    {% endfor %}
+
+{% endblock %}
